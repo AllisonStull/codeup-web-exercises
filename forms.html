@@ -17,10 +17,10 @@
             <br>
     <form method="POST" action="https://request-inspector.glitch.me/">
         <p>
-            <textarea id="Bio" name="Bio_body" placeholder="Tell me about yourself" ></textarea>
+            <textarea id="Bio" name="Bio_body" placeholder="Tell me about yourself" cols="30" rows="19" ></textarea>
         </p>
-        <p>How did you hear about us?
-        </p>
+        <h4>How did you hear about us?</h4>
+
         <label>
             <input type="checkbox" id="option1" name="question1[]" value="billboard">
                 Billboard
@@ -42,10 +42,10 @@
         <label for="browser">Select your browser:
         </label>
         <select id="browser" name="browser">
-            <option>Google</option>
-            <option>Safari</option>
-            <option>Firefox</option>
-            <option>Yahoo!</option>
+            <option value="google">Google</option>
+            <option value="safari">Safari</option>
+            <option value="firefox">Firefox</option>
+            <option value="yahoo">Yahoo!</option>
         </select>
         <br>
         <button type="button">Submit</button>
