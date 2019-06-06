@@ -1,0 +1,54 @@
+h1.fancy-header{
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: white;
+    text-decoration: underline;
+}
+
+body {
+   /* background-color: darkgoldenrod; removed to add background image*/
+    background-image: url("../img/palm_background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: "poppins";
+    color: white;
+
+}
+
+main{
+        background: rgba(126, 223, 247, .2)
+    }
+
+
+ul {
+    list-style: square;
+}
+
+
+th, td, tr {padding: 5px;font-size: 25px}
+
+
+
+a:link {
+    color:orchid;
+}
+
+a:visited {
+    color:olive;
+}
+
+a:hover {
+    transition: font-size 800ms, color 800ms;
+    font-size: 120%;
+    color: darkgoldenrod;
+    transition-timing-function: ease-in-out;
+}
+
+a:active {
+    color:lavender;
+
+}

@@ -1,0 +1,75 @@
+body {
+
+}
+.texas-flag {
+    font-size: 10px;
+    width: 90em;
+    height: 60em;
+    border: .1em solid lightgray ;
+
+
+}
+
+.stripe1{
+    background-color: white;
+    padding: 15em;
+    float: right;
+    width: 350px;
+
+}
+.stripe2{
+    padding: 15em;
+    background-color:darkred;
+    float: right;
+    width: 350px;
+
+}
+.stripe3{
+    padding: 15em;
+    background-color: darkblue;
+    height: 300px;
+
+    position: absolute;
+
+}
+.move{
+    position: absolute;
+    top:270px;
+    left: 50px;
+}
+.star{
+    width:0;
+    height:0;
+    border-left: solid 100px transparent;
+    border-right: solid 100px transparent;
+    border-bottom: solid 70px white;
+    transform: rotateZ(35deg);
+}
+.star:before{
+    position: absolute;
+    display: block;
+    content: '';
+    width:0;
+    height:0;
+    top: -45px;
+    left:-65px;
+    border-left: solid 30px transparent;
+    border-right: solid 30px transparent;
+    border-bottom: solid 80px white;
+    transform: rotateZ(-35deg);
+
+}
+.star:after{
+position: absolute;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    top: 3px;
+    left:-105px;
+    border-left: solid 100px transparent;
+    border-right: solid 100px transparent;
+    border-bottom: solid 70px white;
+    transform: rotateZ(-70deg);
+
+}
