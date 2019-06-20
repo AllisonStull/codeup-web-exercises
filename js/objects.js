@@ -11,6 +11,11 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    var person = new Object();
+    person.lastName = "Stull"
+    person.firstName = "Allison"
+    console.log(person.lastName)
+    console.log(person.firstName)
 
     /**
      * TODO:
@@ -21,6 +26,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    person.sayHello = function () {
+        return "Hello from " + person.firstName + " " + person.lastName + "!";
+    };
+    console.log(person.sayHello());
+
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -42,6 +52,7 @@
     //     {name: 'George', amount: 320}
     // ];
 
+
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -54,7 +65,45 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books = [
+        {
+            title: "Harry Potter and the Sorcerer's Stone",
+            author: {
+                firstName: "J.k.",
+                lastName: "Rowlings"
+            }
+        },
+        {
+            title: "Do No Harm",
+            author: {
+                firstName: "Henry",
+                lastName: "Marsh"
+            }
+        },
+        {
+            title: "The Hobbit",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien"
+            }
+        },
+        {
+            title: 'Tale of Two Cities',
+            author: {
+                firstName: "Charles",
+                lastName: "Dickens"
+            }
+        },
+        {
+            title: "Harry Potter and the Chamber of Secrets",
+            author: {
+                firstName: "J.K.",
+                lastName: "Rowlings"
+            },
+        }
+    ];
 
+    console.log(books);
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -90,5 +139,7 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
 
 })();
