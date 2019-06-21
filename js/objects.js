@@ -12,10 +12,10 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
     var person = new Object();
-    person.lastName = "Stull"
-    person.firstName = "Allison"
-    console.log(person.lastName)
-    console.log(person.firstName)
+    person.lastName = "Stull";
+    person.firstName = "Allison";
+    console.log(person.lastName);
+    console.log(person.firstName);
 
     /**
      * TODO:
@@ -46,11 +46,63 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function(shopper) {
+
+        if (shopper.amount > 200) {
+            var discount = shopper.amount * .12;
+            var shopperTotal = shopper.amount - discount;
+            console.log(shopper.name + "'s amount due: " + "$" + shopper.amount.toFixed(2));
+            console.log(shopper.name + "'s total discount " + "$" + discount.toFixed(2));
+            console.log(shopper.name + "'s total this trip  = " + "$" + shopperTotal.toFixed(2));
+
+
+        } else {
+            console.log(shopper.name + "'s amount due: " + "$" + shopper.amount.toFixed(2));
+            console.log(shopper.name + " not enough spent, sorry no discount.");
+            console.log(shopper.name + "'s total is " + shopper.amount.toFixed(2))
+        }
+    });
+
+    //SOPHIE'S WAY
+
+    // function calculateDiscount(total) {
+    //     var output = 0;
+    //     if (total > 200) {
+    //         output = total * .12;
+    //     }
+    //     return output;
+    //     }
+    //     function convertToCurrency(num){
+    //         return "$" + num.toFixed(2);
+    //     }
+    //     function displayShopperInfo(shopper){
+    //     var output = "";
+    //     var amount = convertToCurrency(shopper.amount);
+    //     var discount = convertToCurrency(calculateDiscount(shopper.amount));
+    //     var finalAmount = convertToCurrency(shopper.amount - calculateDiscount(shopper.amount));
+    //     output += shopper.name + "spent" + amount;
+    //     output += " and recieved a doscount of " + discount;
+    //     output += " and paid " + finalAmount;
+    //     return output;
+    //     }
+    //
+    //     function displayShoppersInfo(shoppers){
+    //     shoppers.forEach(function(shoppers){
+    //         console.log(displayShopperInfo(shopper));
+    //     });
+    //     }
+    //     displayShoppersInfo(shoppers);
+    //
+
+
+
+
 
 
     /** TODO:
@@ -129,6 +181,16 @@
      *      ...
      */
 
+    books.forEach(function(book,i){
+        var output = "";
+        output += "Book #" + (i+1) + "\n";
+        output += "Title: " + book.title + "\n";
+        output += "Author: " + book.author.firstName + " " + book.author.lastName + "\n";
+        output += "---" + "\n";
+        console.log(output);
+
+    });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -143,3 +205,4 @@
 
 
 })();
+
