@@ -1,52 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
-    <title>First Mapbox Map</title>
-<!-- Mapbox CSS -->
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-    <!-- Custom CSS -->
-<style>
-#map {
-    /* the width and height may be set to any size */
-    width: 100%;
-    height: 700px;
-}
-</style>
+    <title>Mapbox Exercise</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+
 </head>
 <body>
-
-<h1>My First Mapbox Map!</h1>
+<h1>Map!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
-    <!-- Mapbox JS -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-    <script src='js/keys.js'> </script>
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-geocoder-utils.js"></script>
 
-<!-- Custom JS -->
 <script>
-mapboxgl.accessToken = key;
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 10,
-    center: [-98.4916, 29.4252]
-});
-var marker = new mapboxgl.Marker()
-    .setLngLat([-98.4916, 29.4260])
-    .addTo(map);
-var popup = new mapboxgl.Popup()
-    .setLngLat([-98.489615, 29.426827])
-    .setHTML("<p>Codeup Rocks!</p>")
-    .addTo(map)
-// var alamoPopup = new mapboxgl.Popup()
-//     .setHTML("<p>Remember The Alamo!</p>")
-//     .addTo(map)
-//
-// marker.setPopup(alamoPopup)
+    mapboxgl.accessToken = key;
+    var sanAntonio;
+    geocode("San Antonio, TX", key).then(function(SATX) {
+        var sanAntonio = SATX;
+        var mapOptions = {
+            container: 'map',
+            center: sanAntonio,
+            zoom: 15,
+            style: 'mapbox://styles/mapbox/streets-v9'
+        };
+        var ourMap = new mapboxgl.Map(mapOptions);
+        ourMap.setZoom(15);
+        var favoriteRestaurants = [
+            {name: "Kimura"},
+            {name: "Ostra Restaurant"},
+            {name: "Walgreens"},
+            {name: "VBar"},
+            {name: "Esquire"},
+            {name: "SoHo Wine & Martini Bar"},
+            {name: "Sip Brew Bar & Eatery"},
+            {name: "Pharm Table"}
+
+
+
+
+        ];
+        favoriteRestaurants.forEach(function (item) {
+            geocode(item.name+", San Antonio, TX", key).then(function (coord) {
+                var popup1 = new mapboxgl.Popup({closeButton: true})
+                    .setHTML("<p>" + item.name + "</p>")
+                    .setLngLat(coord);
+                // .addTo(ourMap);
+                var marker1 = new mapboxgl.Marker({color: "black"})
+                    .setLngLat(coord)
+                    .addTo(ourMap)
+                    .setPopup(popup1);
+            })
+        })
+    })
 
 </script>
 </body>
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--    <head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title> Mapbox exercise</title>-->
+<!--&lt;!&ndash; Mapbox CSS &ndash;&gt;-->
+<!--<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />-->
+<!--    &lt;!&ndash; Custom CSS &ndash;&gt;-->
+<!--<style>-->
+<!--#map {-->
+<!--    /* the width and height may be set to any size */-->
+<!--    width: 100%;-->
+<!--    height: 700px;-->
+<!--}-->
+<!--</style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>My Fav Restruant Mapbox Map</h1>-->
+<!--&lt;!&ndash;ADD BUTTON HERE&ndash;&gt;-->
+<!--&lt;!&ndash;ADD BUTTON HERE&ndash;&gt;-->
+<!--&lt;!&ndash; The HTML element that serves as the Mapbox container &ndash;&gt;-->
+<!--<div id='map'></div>-->
+
+<!--    &lt;!&ndash; Mapbox JS &ndash;&gt;-->
+<!--    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
+<!--    <script src='js/keys.js'></script>-->
+<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
+
+<!--&lt;!&ndash; Custom JS &ndash;&gt;-->
+<!--<script>-->
+<!--mapboxgl.accessToken = key;-->
+<!--var map = new mapboxgl.Map({-->
+<!--    container: 'map',-->
+<!--    style: 'mapbox://styles/mapbox/streets-v9',-->
+<!--    zoom: 10,-->
+<!--    center: [-98.4916, 29.4252]-->
+<!--});-->
+<!--geocode("300 W Bitters Rd #120, San Antonio,TX 78216",key).then(function(result) {-->
+<!--    console.log(result);-->
+<!--    map.setCenter(result);-->
+<!--    map.setZoom(16);-->
+
+<!--});-->
+<!--var marker = new mapboxgl.Marker()-->
+<!--    .setLngLat([-98.487765, 29.568099])-->
+<!--    .addTo(map);-->
+<!--    // .setPopup(popup);-->
+
+<!--var popup = new mapboxgl.Popup()-->
+<!--    .setLngLat([-98.487765, 29.568099])-->
+<!--    .setHTML("<p>Taste of Asia</p>")-->
+<!--    .addTo(map);-->
+<!--//remove addTo(map) once figure out popup issue-->
+<!--//OBJECTS ARRAY-->
+<!--var favRestruants = [-->
+<!--    {-->
+<!--        name: "Taste of Asia",-->
+<!--        description: "Vietnamese",-->
+<!--        speciality:"PHO",-->
+<!--        long: "-98.487765",-->
+<!--        lat: "29.568099",-->
+
+
+<!--    },-->
+<!--    {-->
+<!--        name: "Gramaldies",-->
+<!--        description: "Itialian",-->
+<!--        speciality: "burschetta",-->
+<!--        long: "",-->
+<!--        lat: "",-->
+
+
+<!--    },-->
+<!--    {-->
+<!--        name: "",-->
+<!--        description: "",-->
+<!--        speciality: "",-->
+<!--        long: "",-->
+<!--        lat: "",-->
+
+<!--    },-->
+
+<!--];-->
+<!--// FOREACH LOOP-->
+<!--favRestruants.forEach(function() {-->
+<!--    geocode(item.name, key).then(function (coord) {-->
+
+
+<!--    })-->
+<!--})-->
+
+
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

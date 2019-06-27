@@ -1,0 +1,11 @@
+.jumbotron {
+    margin-top: 20px;
+    background-image: url(https://java.codeup.com/examples/bootstrap/pizza.png);
+    background-size: cover;
+}
+h1 {
+    text-align: center;
+    font-size: 3.5em;
+    background-color: white;
+    opacity: 0.6;
+}

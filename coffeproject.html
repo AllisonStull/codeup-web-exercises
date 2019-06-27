@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Coffee!</h1>
+    <hr/>
+
+    <div class="row">
+        <div class="col">
+            <div class="row" id="coffees">
+            </div>
+        </div>
+
+
+        <div class="col">
+            <h2>Various coffees:</h2>
+            <div class="row justify-content-md-center">
+                <form>
+                    <div class="row"></div>
+                    <label for="roast-selection"></label>
+                    <select id="roast-selection">
+                        <option>all</option>
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                    <label for="coffee-search"></label>
+                    <input id="coffee-search" type="text"/>
+                    <button id="submit" class="btn" type="submit">Submit</button>
+                </form>
+            </div>
+            <hr>
+
+            <div>
+                <!--                <h1>Add A Coffee!</h1>-->
+
+                <!--                <label for="add-coffee-roast-select">Roast</label>-->
+                <!--                <select id="add-coffee-roast-select">-->
+                <!--                    <option value="light">light</option>-->
+                <!--                    <option value="medium">medium</option>-->
+                <!--                    <option value="dark">dark</option>-->
+                <!--                </select>-->
+
+                <!--                <label for="add-coffee-name">Name</label>-->
+                <!--                <input id="add-coffee-name" value="" type="text"/>-->
+
+                <!--                <button id="add-coffee" type="button" onclick="addCoffee()">Submit</button>-->
+                <h2>Add a coffee:</h2>
+                <form>
+                    <label for="new-roast"></label>
+                    <select id="new-roast">
+                        <option value="light">light</option>
+                        <option value="medium">medium</option>
+                        <option value="dark">dark</option>
+                    </select>
+                    <label for="new-name"></label>
+                    <input id="new-name" type="text">
+                    <div class="row">
+                        <button id="new-submit" class="btn" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</body>
+</html>
