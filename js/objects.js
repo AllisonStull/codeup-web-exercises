@@ -87,7 +87,7 @@
     //     var discount = convertToCurrency(calculateDiscount(shopper.amount));
     //     var finalAmount = convertToCurrency(shopper.amount - calculateDiscount(shopper.amount));
     //     output += shopper.name + "spent" + amount;
-    //     output += " and recieved a doscount of " + discount;
+    //     output += " and recieved a discount of " + discount;
     //     output += " and paid " + finalAmount;
     //     return output;
     //     }
