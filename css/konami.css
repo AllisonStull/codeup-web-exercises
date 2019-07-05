@@ -1,0 +1,9 @@
+
+a{
+    transition: color 200ms ease;
+    background:skyblue;
+}
+
+a.blink{
+    color:transparent;
+}

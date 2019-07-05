@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10 FAQ NATIONAL PARKS</title>
+    <link rel="stylesheet" href="css/jquery_faq.css">
+</head>
+<body>
+<a href="#" id="toggle">Toggle Here!</a>
+<dl>
+    <dt>Arches National Park</dt>
+    <dd>Q:Can I scatter ashes in Arches? A:Yes. You will need a memorialization permit.</dd>
+    <dt>Yellowstone National Park</dt>
+    <dd>Q:What is the highest peak in the park? A:Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>
+    <dt>Grand Canyon National Park</dt>
+    <dd>Q:How big is it? A:That depends on how you look at it. The park includes over a million acres of land - 1,218,375.54 acres / 493,077 hectares, to be exact, or 1,904 square miles / 4931 square kilometers.</dd>
+    <dt>Yosemite National Park</dt>
+    <dd>Q:Where can I see giant sequoias? A:There are three giant sequoia groves in Yosemite National Park: the Mariposa Grove, the Tuolumne Grove, and the Merced Grove.</dd>
+    <dt>Zion National Park</dt>
+    <dd>Q:Can I bicycle into Zion Canyon? A:. Bicycles are allowed on the Zion Canyon Scenic Drive. Due to safety concerns cyclists are required to pull over and stop when approached from behind by a shuttle bus. Do not pass a moving shuttle bus.</dd>
+</dl>
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>$(document).ready(function() {
+$('dd').toggleClass('invisible');
+});
+
+$ ('#toggle').click(function(event) {
+    event.preventDefault();
+    $('dd').toggleClass('invisible')
+
+});
+// BONUS
+$ ('dt').click(function(event) {
+    event.preventDefault();
+    $(this).css('background-color', 'blue');
+});
+
+
+</script>
+
+</body>
+</html>
