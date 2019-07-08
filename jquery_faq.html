@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="css/jquery_faq.css">
 </head>
 <body>
+<div id="container"><h1>Would you like to sign up for our newsletter?</h1>
+    <span id="invisible">X</span>
+</div>
 <a href="#" id="btn">Click Me!</a>
+<h2 id="reg">Register Here!</h2>
 <h3>Arches</h3>
-<ul>
+<ul class="hidden">
     <li>There are more than 2000 natural sandstone arches inside Arches National Park.</li>
     <li>Landscape Arch has the longest span of any arch in North America, 306 feet (93.3 meters), and is the fourth longest in the world.</li>
     <li>The most famous natural stone arch in the world - Delicate Arch! Known from photos, this arch has become iconic due to its freestanding shape.</li>
@@ -17,7 +21,7 @@
 
 </ul>
 <h3>White Sands(not a national park)</h3>
-<ul>
+<ul class="hidden">
     <li>White Sands is almost pure gypsum</li>
     <li>Gypsum is actually a clear substance; the dunes appear white like snow because the gypsum grains are constantly banging into each other. The scratches then reflect the sun’s rays making them appear white.</li>
     <li>Gypsum doesn’t absorb heat from the sun. So even on the hottest day of the year, the dunes are cool and comfortable to walk on.</li>
@@ -25,7 +29,7 @@
 
 </ul>
 <h3>Yellowstone</h3>
-<ul>
+<ul class="hidden">
     <li>Half the world’s hydrothermal features are found at Yellowstone.</li>
     <li>Yellowstone is a supervolcano.</li>
     <li>Yellowstone is home to the largest concentration of mammals in the lower 48.</li>
@@ -55,12 +59,33 @@
    });
 
            $('h3').click(function (event) {
-               $(this).next().children().css('font-weight', 'bold');
+               $(this).next().slideToggle().css('font-weight', 'bold');
            });
 
            $('ul').click(function(event) {
                $(this).children().first().css('color', 'blue')
            });
+           // effects exercise #1 newsletter hide when X is clicked
+           $('#invisible').click(function(){
+               $(this).parent().hide()
+
+           });
+
+
+           // effects exercise #3 hiding 'Register Here!' fadeIn after 8 seconds
+               $('#reg').hide();
+               $('#reg').delay(8000).fadeIn(500);
+
+               // non jQuery way that also works
+               // setTimeout(function() {
+               //     $('#reg').fadeIn(500);
+               // }, 8000);
+
+               // this is hiding ul's effects exercise #2 added .slideDown on h3 above to finish
+               $('.hidden').hide();
+
+
+
 
 </script>
 
