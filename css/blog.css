@@ -1,0 +1,17 @@
+body {
+    background-image: url("../img/leafs.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+}
+
+#post { background-color: black;
+    opacity: .6;
+}
+
+#button {
+    background-color: #FAD2D7;
+}
+
