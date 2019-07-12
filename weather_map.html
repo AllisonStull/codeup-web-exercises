@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="css/weather_map.css">
+</head>
+<body>
+<div id="weather"></div>
+<script src="js/keys.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey+"/29.4241,-98.4936").done(function(data) {
+
+        console.log(data);
+        var dateObject = new Date(data.currently.time * 1000);
+        var cloud = data.daily.data[0].cloudCover;
+        console.log(dateObject);
+        console.log(cloud)
+        $("#weather").html(dateObject)
+    });
+</script>
+</body>
+</html>
