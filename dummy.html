@@ -1,0 +1,155 @@
+<!DOCTYPEhtml>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assessment practice</title>
+</head>
+<body>
+<main>
+<h1 id="header">Assessment Practice</h1>
+    <a href="#" id="btn">Click Me!</a>
+
+    <div class="list1">
+        <h3 class="listH1">MY Polaroids</h3>
+        <ul>
+            <li>Polaroid: 600</li>
+
+            <li>Polaroid: Impulse</li>
+
+            <li>Polaroid: Supercolor</li>
+
+            <li>Polaroid: Spirit</li>
+
+            <li>Polaroid: One Step</li>
+        </ul>
+    </div>
+    <div class="list2">
+        <h2 class="listH2">Shells</h2>
+        <ol>
+            <li>Conch Shell</li>
+
+            <li>Cockle Shell</li>
+
+            <li>Junonia Shell</li>
+
+            <li>Whelk Shell</li>
+
+            <li>Olive Shell</li>
+
+            <li>Jingle Shell</li>
+        </ol>
+    </div>
+    <div class="list3">
+        <h3 class="listH3">Orchids</h3>
+        <ul>
+            <li>Brassavola</li>
+
+            <li>Cattleya</li>
+
+            <li>Dendrobium</li>
+
+            <li>Encyclia</li>
+
+            <li>Miltonia</li>
+
+            <li>Oncidium</li>
+
+            <li>Paphiopedlium</li>
+
+            <li>Phalaenopsis</li>
+
+            <li>Phragmipedium</li>
+
+            <li>Vanda</li>
+
+            <li>Zygopetalum</li>
+        </ul>
+    </div>
+    <div class="definitionList">
+        <dl>
+            <dt>Zoey</dt>
+            <dd>Fat Fluffy Siamese</dd>
+
+            <dt>Chloe</dt>
+            <dd>Fat Siamese</dd>
+
+            <dt>Kodi</dt>
+            <dd>Tabby Loaf</dd>
+
+            <dt>Dexter</dt>
+            <dd>Orange Tabby Loaf</dd>
+        </dl>
+    </div>
+    <p>Lorem ipsum dolor amet 8-bit pop-up small batch tattooed, vice tofu edison bulb brunch banjo kombucha vegan la croix offal. Ramps pug offal letterpress cred prism poutine live-edge vaporware photo booth lo-fi direct trade blue bottle. Cliche YOLO farm-to-table, hot chicken ugh williamsburg thundercats tilde gluten-free vexillologist street art hoodie. Lo-fi YOLO subway tile, bicycle rights flannel vape pabst skateboard chicharrones knausgaard locavore polaroid. Pitchfork polaroid fanny pack, enamel pin wayfarers quinoa lumbersexual kinfolk cronut thundercats.</p>
+
+    <p>Tendrils of gossamer clouds a mote of dust suspended in a sunbeam billions upon billions a still more glorious dawn awaits extraordinary claims require extraordinary evidence Rig Veda. Emerged into consciousness rich in mystery how far away take root and flourish with pretty stories for which there's little good evidence with pretty stories for which there's little good evidence. Two ghostly white figures in coveralls and helmets are soflty dancing are creatures of the cosmos something incredible is waiting to be known another world concept of the number one the carbon in our apple pies?
+    </p>
+
+    <p id="hover">Ragdoll lynx siamese bobcat bobcat. Tom munchkin yet sphynx. American shorthair turkish angora for munchkin and savannah, burmese yet cheetah yet kitty. Manx turkish angora yet persian. Cougar sphynx cornish rex kitten. Balinese lynx havana brown ragdoll so bombay tabby. Puma british shorthair. </p>
+</main>
+
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+
+
+    //when a key is pressed change background color of h2 to green
+    $(document).keypress(function(e) {
+        if (e.key === 'a') {
+            $('h2').css('background-color', 'green')
+        }
+
+    });
+
+    $(document).keypress(function(e) {
+        if (e.key === 'z') {
+            $('h3').css('background-color', 'blue')
+        }
+    });
+
+    $(document).keypress(function(e) {
+        if (e.key === 'b') {
+            $('li').css('background-color', 'purple')
+        }
+    });
+
+    // when link is clicked last li for each ul will have a BG color of yellow
+    $ ('#btn').click(function(event) {
+        $('ul').each(function () {
+            $(this).children().last().css('background-color', 'yellow');
+        });
+    });
+
+    // when h3 is clicked list with slide back and fourth and font will become bold
+    $('h3').click(function (event) {
+        $(this).next().slideToggle().css('font-weight', 'bold');
+    });
+
+    //Set the background color to yellow, when the mouse pointer is over a <p> element
+    $("p").mouseover(function(){
+        $("p").css("background-color", "yellow");
+    });
+    //Change the background color of a <p> element when the mouse pointer hovers over it
+
+    $('#hover').hover(function(){
+        $(this).css("background-color", "orange");
+    }, function(){
+        $(this).css("background-color", "pink");
+    });
+
+
+// document.getElementsByTagName('body)[0];
+    //returns a node collection we need to specify which item we want
+    //innerText returns the text within html tags
+    //innerHTML can also return html tags
+//for space bar it is " "
+    // .prev()
+    // your own js is alwasy last
+
+
+
+
+</script>
+</body>
+</html>
